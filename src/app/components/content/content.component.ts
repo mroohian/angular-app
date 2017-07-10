@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data/data.service';
+import { User } from '../../models/user.model'
 
 @Component({
   selector: 'app-content',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
+  users: User[];
 
-  constructor() { }
+  constructor(public dataService: DataService) { }
 
   ngOnInit() {
   }
 
+  loadUsers() {
+    console.log('loadUsers');
+    this.users = this.dataService.getUsers();
+  }
 }
