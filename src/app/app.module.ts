@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MaterialModule } from './modules/material/material.module'
+import { MaterialModule } from './modules/material/material.module';
 
 import { DataService } from './services/data/data.service';
 
