@@ -16,7 +16,18 @@ export class ContentComponent implements OnInit {
   }
 
   loadUsers() {
-    console.log('loadUsers');
-    this.users = this.dataService.getUsers();
+    var usersObservable = this.dataService.getUsers();
+    usersObservable.subscribe((users) => {
+      /* onNext */
+      this.users = users;
+      console.log('onNext');
+    }, (err) => {
+      /* onError */
+      console.log('onError');
+    }, () => {
+      /* onComplete */
+      console.log('onComplete');
+    });
+
   }
 }

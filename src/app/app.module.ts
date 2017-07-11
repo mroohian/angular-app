@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { MaterialModule } from './modules/material/material.module';
 
 import { DataService } from './services/data/data.service';
@@ -18,7 +19,8 @@ import { ContentComponent } from './components/content/content.component';
   ],
   imports: [
     BrowserModule,
-    MaterialModule
+    HttpModule,
+    MaterialModule    
   ],
   providers: [
     DataService
