@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { AppRouteModule } from './modules/app-route/app-route.module';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from './modules/material/material.module';
@@ -21,7 +22,8 @@ import { AboutComponent } from './components/about/about.component';
     AboutComponent
   ],
   imports: [
-    BrowserModule,    
+    BrowserModule,   
+    FormsModule, 
     AppRouteModule,
     HttpModule,    
     MaterialModule    

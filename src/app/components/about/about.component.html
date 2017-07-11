@@ -1,3 +1,10 @@
-<p>
-  about works!
-</p>
+<div>
+  <p> About: {{first}}</p>
+
+  <form>
+    <label for="first"> First:</label>
+    <input type="text" name="first" [(ngModel)]="first">
+    
+    <button (click)="setAfsoun()" >Click me!</button>
+  </form>
+</div>
