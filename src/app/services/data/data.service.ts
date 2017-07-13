@@ -10,7 +10,7 @@ export class DataService {
   }
 
   getUsers() : Observable<User[]> {
-    let returnObservable = this.http.get('/api/users.json')
+    let returnObservable = this.http.get('/api/users')
       .map((response) => response.json());
 
     return returnObservable;
