@@ -2,11 +2,11 @@
   "name": "my-angular1",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "live": "ng build --output-path=live/dist",
+  "scripts": { 
+    "dev-build": "ng build",
+    "dev": "ng serve --proxy-config proxy.config.json",
+    "live-build": "ng build --prod --output-path=live/dist",
+    "live": "node live/myServer.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
