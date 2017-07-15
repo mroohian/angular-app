@@ -5,7 +5,8 @@ import {
   MdButtonModule, 
   MdCheckboxModule, 
   MdToolbarModule,
-  MdCardModule
+  MdCardModule,
+  MdTooltipModule
 } from '@angular/material';
 
 var importedModules = [
@@ -15,7 +16,8 @@ var importedModules = [
   MdButtonModule,
   MdCheckboxModule,
   MdToolbarModule,
-  MdCardModule
+  MdCardModule,
+  MdTooltipModule
 ];
 
 @NgModule({

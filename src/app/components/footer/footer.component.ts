@@ -6,8 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  currentTime : Date;
+  timeFormat: string;
 
-  constructor() { }
+  constructor() { 
+    this.toggleFormat();
+    this.currentTime = new Date(Date.now());
+    setInterval(() => {
+      this.currentTime = new Date(Date.now());
+    }, 1000);    
+  }
+
+  toggleFormat() {
+    if (this.timeFormat == 'medium') {
+      this.timeFormat = 'mediumTime';
+    } else {
+      this.timeFormat = 'medium';
+    }
+  }
 
   ngOnInit() {
   }

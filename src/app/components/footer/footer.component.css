@@ -1,0 +1,20 @@
+.footer {
+    margin-top: 20px;
+}
+
+.small-toolbar-row {
+    height: auto;
+}
+
+.footer-small {
+    font-size: 12px;
+}
+
+.time {
+    user-select: none;
+    cursor: pointer;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
