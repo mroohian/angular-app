@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-company-info',
   templateUrl: './company-info.component.html',
-  styleUrls: ['./company-info.component.css']
+  styleUrls: ['./company-info.component.less']
 })
 export class CompanyInfoComponent implements OnInit {
   @Input('name') companyName : string;

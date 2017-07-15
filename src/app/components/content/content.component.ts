@@ -5,7 +5,7 @@ import { User } from '../../models/user.model'
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  styleUrls: ['./content.component.less']
 })
 export class ContentComponent implements OnInit {
   users: User[];
