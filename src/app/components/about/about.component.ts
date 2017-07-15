@@ -25,6 +25,10 @@ export class AboutComponent implements OnInit {
   setAfsoun() {
     this.first = 'afsoun';
   }
+
+  companyInfoCompanyLabelClick(event) {
+    console.log('companyInfoCompanyLabelClick', event);
+  }
 }
 
 interface Company {

@@ -2,7 +2,8 @@
   <app-company-info [name]="company.name" 
     [address]="company.address"
     [tel]="company.tel" 
-    [web-site]="company.website">
+    [web-site]="company.website"
+    (companyLabelClick)="companyInfoCompanyLabelClick($event)">
   </app-company-info>
 
   <p> About: {{first}}</p>

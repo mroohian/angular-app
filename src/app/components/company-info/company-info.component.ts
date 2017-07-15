@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-company-info',
@@ -14,9 +14,14 @@ export class CompanyInfoComponent implements OnInit {
 
   @Input('web-site') companyWebsite : string;
 
+  @Output() companyLabelClick = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onCompanyLabelClick() {
+    this.companyLabelClick.emit(42);
+  }
 }
