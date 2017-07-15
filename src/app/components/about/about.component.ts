@@ -8,11 +8,28 @@ import { Component, OnInit } from '@angular/core';
 export class AboutComponent implements OnInit {
   first: string;
 
-  constructor() { }
+  company: Company;
+
+  constructor() { 
+    this.company = {
+      name: "Afsoun GmbH",
+      address: "Muster-Str. 10, 86861 Musterstadt",
+      tel: "+49-123-13254234",
+      website: "www.afsoun.de"
+    }
+
+  }
 
   ngOnInit() { }
 
   setAfsoun() {
     this.first = 'afsoun';
   }
+}
+
+interface Company {
+  name: string;
+  address: string;
+  tel: string;
+  website: string;
 }
