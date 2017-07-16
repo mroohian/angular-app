@@ -15,6 +15,8 @@ import { AboutComponent } from './components/about/about.component';
 import { CompanyInfoComponent } from './components/company-info/company-info.component';
 import { ContactComponent } from './components/contact/contact.component';
 
+import { HighlightDirective } from './directives/highlight/highlight.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,8 @@ import { ContactComponent } from './components/contact/contact.component';
     ContentComponent,
     AboutComponent,
     CompanyInfoComponent,
-    ContactComponent
+    ContactComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,   
