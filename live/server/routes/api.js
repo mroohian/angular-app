@@ -1,4 +1,6 @@
 const express = require('express');
+const userController = require('./controller/user');
+const contactMessageController = require('./controller/contactMessage');
 
 module.exports = function(mongodbClient) {
   const router = express.Router();
@@ -15,32 +17,9 @@ Endpoints:
 `);
   });
 
-  // GET /users
-  router.get('/users', (req, res) => {
-    res.type("json");
-
-    mongodbClient.connect(function(db) {
-      return db.collection("customers").find().toArray(function(err, result) {
-        if (err) throw err;
-        res.send(result);
-        db.close();
-      });
-    });
-  });
-
-  // GET /users/1
-  router.get('/users/:userId', (req, res) => {
-    var userId = parseInt(req.params.userId);
-    res.type("json");
-
-    mongodbClient.connect(function(db) {
-      return db.collection("customers").find({userId: userId}).toArray(function(err, result) {
-        if (err) throw err;
-        res.send(result[0]);
-        db.close();
-      });
-    });
-  });
+  // Add controller end-points.
+  userController(router, mongodbClient);
+  contactMessageController(router, mongodbClient);
 
   return router;
 };
