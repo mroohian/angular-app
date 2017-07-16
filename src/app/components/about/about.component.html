@@ -1,3 +1,5 @@
+<h1>About Us</h1>
+
 <div>
   <app-company-info [name]="company.name" 
     [address]="company.address"
@@ -6,12 +8,4 @@
     (companyLabelClick)="companyInfoCompanyLabelClick($event)">
   </app-company-info>
 
-  <p> About: {{first}}</p>
-
-  <form>
-    <label for="first"> First:</label>
-    <input type="text" name="first" [(ngModel)]="first">
-    
-    <button (click)="setAfsoun()" >Click me!</button>
-  </form>
 </div>

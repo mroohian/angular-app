@@ -10,7 +10,7 @@ import { User } from '../../models/user.model'
 export class ContentComponent implements OnInit {
   users: User[];
 
-  constructor(public dataService: DataService) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
   }

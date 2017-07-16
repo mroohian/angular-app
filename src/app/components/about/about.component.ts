@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.less']
 })
 export class AboutComponent implements OnInit {
-  first: string;
-
   company: Company;
 
   constructor() { 
@@ -21,10 +19,6 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit() { }
-
-  setAfsoun() {
-    this.first = 'afsoun';
-  }
 
   companyInfoCompanyLabelClick(event) {
     console.log('companyInfoCompanyLabelClick', event);

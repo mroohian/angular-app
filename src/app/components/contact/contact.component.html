@@ -1,0 +1,26 @@
+<h1>Contact Us</h1>
+
+<form>
+  <table>
+    <tbody>
+      <tr>
+        <td><label for="name">Name:</label></td>
+        <td><input type="text" id="name" name="name" [(ngModel)]="message.name"></td>
+      </tr>
+
+      <tr>
+        <td><label for="email"> E-Mail:</label></td>
+        <td><input type="email" id="email" name="email" [(ngModel)]="message.email"></td>
+      </tr>
+
+      <tr>
+        <td><label for="body"> Message:</label></td>
+        <td>
+          <textarea id="body" rows="10" cols="50" name="body" [(ngModel)]="message.body">            
+          </textarea>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="send()">Send Message</button>
+</form>
