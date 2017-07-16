@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { CompanyInfoComponent } from '../company-info/company-info.component';
 
 @Component({
   selector: 'app-about',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class AboutComponent implements OnInit {
   company: Company;
 
+  @ViewChild('mainCompanyInfo') companyInfo : CompanyInfoComponent;
+
   constructor() { 
     this.company = {
       name: "Afsoun GmbH",
@@ -15,13 +18,12 @@ export class AboutComponent implements OnInit {
       tel: "+49-123-13254234",
       website: "www.afsoun.de"
     }
-
   }
 
   ngOnInit() { }
 
   companyInfoCompanyLabelClick(event) {
-    console.log('companyInfoCompanyLabelClick', event);
+    console.log('companyInfoCompanyLabelClick', this.companyInfo, event);
   }
 }
 
