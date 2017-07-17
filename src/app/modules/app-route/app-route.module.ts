@@ -6,7 +6,7 @@ import { ContactComponent } from '../../components/contact/contact.component';
 import { AboutComponent } from '../../components/about/about.component';
 
 // App routing table
-const routes: Routes = [{
+export const routes: Routes = [{
   path: '',
   component: ContentComponent
 }, {

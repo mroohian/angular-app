@@ -7,8 +7,13 @@ import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
+export interface DataServiceInterface {
+  getUsers(): Observable<User[]>;
+  sendContactMessage(message: ContactMessage): Observable<Boolean>;
+}
+
 @Injectable()
-export class DataService {
+export class DataService implements DataServiceInterface {
   constructor(private http: Http) {
   }
 

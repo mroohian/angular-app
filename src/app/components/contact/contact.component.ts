@@ -24,20 +24,17 @@ export class ContactComponent implements OnInit {
     };
   }
 
-  send() {
-    // send the message.
-    this.dataService.sendContactMessage(this.message).subscribe((success) => {
-      /* onNext */
-      console.log('onNext ' + success);
-    }, (err) => {
-      /* onError */
-      console.log('onError');
-    }, () => {
-      /* onComplete */
-      console.log('onComplete');
-    });
+  send(): Promise<Boolean> {
+    return new Promise<any>((resolve, reject) => {
+      // send the message.
+      this.dataService.sendContactMessage(this.message).subscribe((success) => {
+        resolve(success);
+      }, (err) => {
+        reject(err);
+      });
 
-    // clear out the message
-    this.resetMessage();
+      // clear out the message
+      this.resetMessage();
+    });
   }
 }
