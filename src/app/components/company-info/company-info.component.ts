@@ -6,13 +6,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./company-info.component.less']
 })
 export class CompanyInfoComponent implements OnInit {
-  @Input('name') companyName : string;
-
-  @Input('address') companyAddress : string;
-
-  @Input('tel') companyTel : string;
-
-  @Input('web-site') companyWebsite : string;
+  @Input() companyName: string;
+  @Input() companyAddress: string;
+  @Input() companyTel: string;
+  @Input() companyWebsite: string;
 
   @Output() companyLabelClick = new EventEmitter<number>();
 

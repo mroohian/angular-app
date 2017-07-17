@@ -9,14 +9,14 @@ import { CompanyInfoComponent } from '../company-info/company-info.component';
 export class AboutComponent implements OnInit {
   company: Company;
 
-  @ViewChild('mainCompanyInfo') companyInfo : CompanyInfoComponent;
+  @ViewChild('mainCompanyInfo') companyInfo: CompanyInfoComponent;
 
-  constructor() { 
+  constructor() {
     this.company = {
-      name: "Afsoun GmbH",
-      address: "Muster-Str. 10, 86861 Musterstadt",
-      tel: "+49-123-13254234",
-      website: "www.afsoun.de"
+      name: 'Afsoun GmbH',
+      address: 'Muster-Str. 10, 86861 Musterstadt',
+      tel: '+49-123-13254234',
+      website: 'www.afsoun.de'
     }
   }
 

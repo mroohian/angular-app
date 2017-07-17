@@ -2,10 +2,10 @@
 
 <div>
   <app-company-info #mainCompanyInfo
-    [name]="company.name" 
-    [address]="company.address"
-    [tel]="company.tel" 
-    [web-site]="company.website"
+    [companyName]="company.name" 
+    [companyAddress]="company.address"
+    [companyTel]="company.tel" 
+    [companyWebsite]="company.website"
     (companyLabelClick)="companyInfoCompanyLabelClick($event)">
   </app-company-info>
 

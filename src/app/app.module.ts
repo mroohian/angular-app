@@ -29,11 +29,11 @@ import { HighlightDirective } from './directives/highlight/highlight.directive';
     HighlightDirective
   ],
   imports: [
-    BrowserModule,   
-    FormsModule, 
+    BrowserModule,
+    FormsModule,
     AppRouteModule,
-    HttpModule,    
-    MaterialModule    
+    HttpModule,
+    MaterialModule
   ],
   providers: [
     DataService

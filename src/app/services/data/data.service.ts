@@ -9,18 +9,18 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataService {
-  constructor(private http : Http) { 
+  constructor(private http: Http) {
   }
 
-  getUsers() : Observable<User[]> {
-    let returnObservable = this.http.get('/api/users')
+  getUsers(): Observable<User[]> {
+    const returnObservable = this.http.get('/api/users')
       .map((response) => response.json());
 
     return returnObservable;
   }
 
-  sendContactMessage(message : ContactMessage) : Observable<Boolean> {
-    let returnObservable = this.http.post('/api/contactMessage', message)
+  sendContactMessage(message: ContactMessage): Observable<Boolean> {
+    const returnObservable = this.http.post('/api/contactMessage', message)
       .map((response) => response.ok);
 
     return returnObservable;

@@ -16,7 +16,8 @@ export class ContentComponent implements OnInit {
   }
 
   loadUsers() {
-    var usersObservable = this.dataService.getUsers();
+    const usersObservable = this.dataService.getUsers();
+
     usersObservable.subscribe((users) => {
       /* onNext */
       this.users = users;

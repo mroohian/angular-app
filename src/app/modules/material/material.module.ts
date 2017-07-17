@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { 
+import {
   MdIconModule,
-  MdButtonModule, 
-  MdCheckboxModule, 
+  MdButtonModule,
+  MdCheckboxModule,
   MdToolbarModule,
   MdCardModule,
   MdTooltipModule
 } from '@angular/material';
 
-var importedModules = [
+const importedModules = [
   BrowserAnimationsModule,
   MdIconModule,
 
