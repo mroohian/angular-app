@@ -1,4 +1,5 @@
 // Get dependencies
+const compression = require('compression');
 const express = require('express');
 const path = require('path');
 const http = require('http');
@@ -14,6 +15,9 @@ const mongodbClient = require('./server/mongodb/mongodbClient')(config);
 const api = require('./server/routes/api')(mongodbClient);
 
 const app = express();
+
+// Compress response
+app.use(compression());
 
 // Parsers for POST data
 app.use(bodyParser.json());
