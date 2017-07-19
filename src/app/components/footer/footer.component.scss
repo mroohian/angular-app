@@ -1,0 +1,35 @@
+:host {
+  .footer {
+    margin-top: 20px;
+  }
+
+  .footer-small {
+    font-size: 12px;
+  }
+
+  .copyright {
+    flex: 1 1 auto;
+    white-space: normal;
+    line-height: 1.3em;
+
+    span {
+      display: inline-block;
+      white-space: nowrap;
+
+      @media (max-width: 480px) {
+        & {
+          white-space: normal;
+        }    
+      }
+    }
+  }
+
+  .small-toolbar-row {
+    height: auto;
+  }
+
+  .time {
+    user-select: none;
+    cursor: pointer;
+  }
+}

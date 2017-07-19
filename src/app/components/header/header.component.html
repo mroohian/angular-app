@@ -1,9 +1,20 @@
+<header>  
+  <md-toolbar color="primary">
+    <h2 class="toolbar-spacer">Header</h2>
 
-<md-toolbar color="primary">
-  <span>Header</span>
+    <div class="menu">
+      <label for="toggle">
+        <a md-button class="menu-button">
+          <md-icon aria-hidden="true">menu</md-icon>
+        </a>
+      </label>
+    </div>
 
-  <button md-button routerLink=""><md-icon aria-hidden="true">home</md-icon> Home</button>
-  <button md-button routerLink="contact"><md-icon aria-hidden="true">local_post_office</md-icon> Contact</button>
-  <button md-button routerLink="about"><md-icon aria-hidden="true">business</md-icon> About</button>
-
-</md-toolbar>
+    <input id="toggle" class="menu-toggle" type="checkbox">
+    <nav>      
+      <a md-button routerLink=""><md-icon aria-hidden="true">home</md-icon> Home</a>
+      <a md-button routerLink="contact"><md-icon aria-hidden="true">local_post_office</md-icon> Contact</a>
+      <a md-button routerLink="about"><md-icon aria-hidden="true">business</md-icon> About</a>
+    </nav>
+  </md-toolbar>  
+</header>

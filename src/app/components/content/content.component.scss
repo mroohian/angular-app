@@ -1,0 +1,64 @@
+:host {
+  .example-card {
+    width: 200px;
+  }
+
+  @media (max-width: 480px) {
+    .example-card {
+      width: 200px;
+    }    
+  }
+  @media (min-width: 480px) and (max-width: 680px) {
+    .example-card {
+      width: 420px;
+    }    
+  }
+
+  @media (min-width: 680px) and (max-width: 1200px) {
+    .example-card {
+      width: 600px;
+    }    
+  }
+
+  @media (min-width: 1200px) {
+    .example-card {
+      width: 100%;
+      max-width: 800px;
+    }    
+  }
+
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba2.jpg');
+    background-size: cover;
+  }
+
+  .user-list {
+    border-top: 1px dotted lightgray;
+    border-bottom: 1px dotted lightgray;
+
+    ul {
+      list-style-type: none;
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid darkgray;
+      }
+
+      li {
+        label {
+          font-weight: 600;
+        }
+
+        text-align: left;
+      }
+
+      @media (max-width: 480px) {
+        li {
+          text-align: center;
+          label {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

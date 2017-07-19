@@ -1,38 +1,33 @@
-<h1>Welcome to Angular4!</h1>
+<article class="app-container">
+  <h1 class="mat-h1">Welcome to Angular4!</h1>
 
-<md-card class="example-card">
-  <md-card-header>
-    <div md-card-avatar class="example-header-image"></div>
-    <md-card-title>Shiba Inu</md-card-title>
-    <md-card-subtitle>Dog Breed</md-card-subtitle>
-  </md-card-header>
-  <img md-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
-  <md-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </md-card-content>
-  <md-card-actions>
-    <button md-button>LIKE</button>
-    <button md-button>SHARE</button>
-  </md-card-actions>
-</md-card>
+  <md-card class="example-card">
+    <md-card-header>
+      <div md-card-avatar class="example-header-image"></div>
+      <md-card-title>Shiba Inu</md-card-title>
+      <md-card-subtitle>Dog Breed</md-card-subtitle>
+    </md-card-header>
+    <img md-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+    <md-card-content>
+      <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+      </p>
 
-<div>
-  <button md-raised-button (click)="loadUsers()">Load Users</button>
-  <button md-button>Flat button</button>
-  <button md-fab><md-icon>check</md-icon></button>
-  <button md-mini-fab><md-icon>check</md-icon></button>
-</div>
-
-<div *ngIf="users !== undefined">
-  <div *ngFor="let user of users">
-    <ul>
-      <li>ID: {{user.userId}}</li>
-      <li>Name: {{user.name}}</li>
-      <li>E-Mail: {{user.email}}</li>
-    </ul>
-  </div>
-</div>
+      <div class="user-list" *ngIf="users !== undefined">        
+        <ul *ngFor="let user of users">
+          <li><label>ID: </label>{{user.userId}}</li>          
+          <li><label>Name: </label>{{user.name}}</li>
+          <li><label>E-Mail: </label>{{user.email}}</li>
+        </ul>
+      </div>
+    </md-card-content>
+    <md-card-actions>
+      <button md-raised-button (click)="loadUsers()">Load Users</button>
+      <button md-button>Flat button</button>
+      <button md-fab><md-icon>check</md-icon></button>
+      <button md-mini-fab><md-icon>check</md-icon></button>
+    </md-card-actions>
+  </md-card>
+</article>

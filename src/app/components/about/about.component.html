@@ -1,12 +1,11 @@
-<h1>About Us</h1>
+<article class="app-container">
+  <h1 class="mat-h1">About Us</h1>
 
-<div>
-  <app-company-info #mainCompanyInfo
+  <app-company-info #mainCompanyInfo    
     [companyName]="company.name" 
     [companyAddress]="company.address"
     [companyTel]="company.tel" 
     [companyWebsite]="company.website"
     (companyLabelClick)="companyInfoCompanyLabelClick($event)">
   </app-company-info>
-
-</div>
+</article>

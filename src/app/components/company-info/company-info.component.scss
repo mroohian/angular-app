@@ -1,0 +1,18 @@
+@import '~@angular/material/theming';
+@import '../../../material-theme';
+
+$accent: map-get($app-theme, accent);
+
+:host {
+  display: block;
+  width: 230px;
+  height: 160px; 
+
+  .company-info {
+    background-color: mat-color($accent,300);
+    border: 2px solid mat-color($accent, A700);
+
+    display: block;
+    border-radius: 4px;    
+  }
+}

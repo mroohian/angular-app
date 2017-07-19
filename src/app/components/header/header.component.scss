@@ -1,0 +1,60 @@
+@import '~@angular/material/theming';
+@import '../../../material-theme';
+
+$primary: map-get($app-theme, primary);
+
+:host {
+  .toolbar-spacer {
+    flex: 1 1 auto;
+  }
+
+  .menu {
+    .menu-button {
+      display: block;
+
+      @media (min-width: 480px) {
+        display: none;
+      }
+
+      &:checked {
+        background-color: red;
+      }
+    }
+
+    + nav {
+      display: none;
+
+      @media (min-width: 480px) {
+        display: flex;
+      }      
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+
+    @media (max-width: 480px) {
+      + nav {
+        position: absolute;
+        width: 150px;
+        height: auto;
+        right: 10px;
+        top: 46px;
+
+        border: 1px solid darkgray;
+        border-radius: 4px;
+        background-color: mat-color($primary, 200);
+
+        z-index: 20;
+
+        a {
+          display: block;
+        }
+      }
+
+      &:not(:checked) + nav {
+        display: none;
+      }
+    }
+  }
+}

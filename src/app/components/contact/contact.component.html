@@ -1,26 +1,36 @@
-<h1>Contact Us</h1>
+<article class="app-container">
+  <h1 class="mat-h1">Contact Us</h1>
 
-<form>
-  <table>
-    <tbody>
-      <tr>
-        <td><label for="name">Name:</label></td>
-        <td><input type="text" id="name" name="name" [(ngModel)]="message.name"></td>
-      </tr>
+  <form (ngSubmit)="send()" #contactForm="ngForm">
 
-      <tr>
-        <td><label for="email"> E-Mail:</label></td>
-        <td><input type="email" id="email" name="email" [(ngModel)]="message.email"></td>
-      </tr>
+    <md-input-container class="contact-field-full-width">
+      <input mdInput required
+      name="name"             
+      placeholder="Full Name"
+      [(ngModel)]="message.name">
+    </md-input-container>
 
-      <tr>
-        <td><label for="body"> Message:</label></td>
-        <td>
-          <textarea id="body" rows="10" cols="50" name="body" [(ngModel)]="message.body">            
-          </textarea>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <button (click)="send()">Send Message</button>
-</form>
+    <md-input-container class="contact-field-full-width">
+      <input mdInput required email
+          type="email" 
+          name="email" 
+          placeholder="Email"
+          [(ngModel)]="message.email">
+    </md-input-container>
+
+    <md-input-container class="contact-field-full-width">
+      <textarea mdInput required
+        rows="10" cols="50" 
+        minlength="20" maxlength="500"
+        name="body" 
+        placeholder="Message"
+        [(ngModel)]="message.body">
+      </textarea>
+    </md-input-container>
+
+    <button md-raised-button type="submit"
+      class="contact-send"
+      [disabled]="!contactForm.form.valid">Send Message</button>
+
+  </form>
+</article>

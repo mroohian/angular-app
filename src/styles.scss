@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~material-design-icons/iconfont/material-icons.css";
+
+body {
+  margin: 0;
+  
+  background-image: url(assets/img/bg.png);
+}
+
+.app-container {
+  box-sizing: border-box;
+  padding: 0 15px;
+  width: 100%;
+  text-align: center;
+
+  > * {
+    margin: auto;
+  }
+}

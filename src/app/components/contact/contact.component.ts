@@ -1,14 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { DataService } from '../../services/data/data.service';
 import { ContactMessage } from '../../models/contactMessage.model';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.less']
+  styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  message: ContactMessage;
+  @ViewChild('contactForm') contactForm: NgForm;
+
+  message: ContactMessage = {
+    name: '',
+    email: '',
+    body: ''
+  };
 
   constructor(private dataService: DataService) { }
 
@@ -17,11 +24,7 @@ export class ContactComponent implements OnInit {
   }
 
   resetMessage() {
-    this.message = {
-      name: '',
-      email: '',
-      body: ''
-    };
+    this.contactForm.resetForm();
   }
 
   send(): Promise<Boolean> {

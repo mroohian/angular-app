@@ -1,9 +1,13 @@
-<md-toolbar class="footer" color="accent">
-  <span>Footer</span>
-  <md-toolbar-row class="small-toolbar-row">
-    <span class="footer-small">Copyright© 2017 Afsoun GmbH. All rights reserved.</span>
-    <span class="toolbar-spacer"></span>
-    <span (click)="toggleFormat()" class="footer-small time" mdTooltip="Click to change the date format." mdTooltipPosition="above">{{currentTime | date:timeFormat}}</span>
-  </md-toolbar-row>
-</md-toolbar>
-
+<footer>
+  <md-toolbar class="footer" color="accent">
+    <span>Footer</span>
+    <md-toolbar-row class="small-toolbar-row">
+      <span class="footer-small copyright">
+        <span>Copyright&copy; 2016-{{ currentTime | date:'y' }}</span>
+        <span>{{companyName}}.</span>
+        <span>All rights reserved.</span>
+    </span>
+      <span (click)="toggleFormat()" class="footer-small time" mdTooltip="Click to change the date format." mdTooltipPosition="above">{{currentTime | date:timeFormat}}</span>
+    </md-toolbar-row>
+  </md-toolbar>
+</footer>
