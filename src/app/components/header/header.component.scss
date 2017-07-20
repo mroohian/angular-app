@@ -1,30 +1,53 @@
-@import '~@angular/material/theming';
-@import '../../../material-theme';
-
-$primary: map-get($app-theme, primary);
+@import '../../../theme/material-theme';
 
 :host {
+  $header-logo-height: 60px;
+  
   .toolbar-spacer {
     flex: 1 1 auto;
+  }
+
+  .search-logo-bar {
+    display: flex;
+    align-items: stretch;
+    
+    a.logo {
+      line-height: $header-logo-height;
+
+      > * {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      @media (max-width: $media-max-mobile-xs) {
+        .title {
+          display: none;
+        }
+      }
+    }
+
+    app-searchbox {
+      flex: 1 1 auto;
+      height: $header-logo-height;
+      max-width: 300px;
+      padding-left: 10px;
+      font-size: 0.6em;
+    }
   }
 
   .menu {
     .menu-button {
       display: block;
 
-      @media (min-width: 480px) {
+      @media (min-width: $media-max-mobile-xs) {
         display: none;
-      }
-
-      &:checked {
-        background-color: red;
       }
     }
 
     + nav {
       display: none;
 
-      @media (min-width: 480px) {
+      @media (min-width: $media-max-mobile-xs) {
         display: flex;
       }      
     }
@@ -41,17 +64,13 @@ $primary: map-get($app-theme, primary);
         right: 10px;
         top: 46px;
 
-        border: 1px solid darkgray;
-        border-radius: 4px;
-        background-color: mat-color($primary, 200);
-
-        z-index: 20;
-
+        @include app-popup();
+        
         a {
           display: block;
         }
       }
-
+      
       &:not(:checked) + nav {
         display: none;
       }

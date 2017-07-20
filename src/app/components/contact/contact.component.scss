@@ -1,15 +1,16 @@
-@import '~@angular/material/theming';
-@import '../../../material-theme';
-
-$primary: map-get($app-theme, primary);
+@import '../../../theme/material-theme';
 
 :host {
+  .app-container {
+    padding: 0 15px;
+  }
+
   .contact-field-full-width {
     display: block;
     width: 90%;
   }
 
   .contact-send {
-    background-color: mat-color($primary, 500);
+    background-color: mat-color($app-primary, 500);
   }
 }

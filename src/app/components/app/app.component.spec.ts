@@ -2,11 +2,13 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 
 import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../../modules/material/material.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
+import { SearchboxComponent } from '../searchbox/searchbox.component';
 
 describe('component: AppComponent', () => {
   let component: AppComponent;
@@ -19,10 +21,12 @@ describe('component: AppComponent', () => {
       declarations: [
         AppComponent,
         HeaderComponent,
-        FooterComponent
+        FooterComponent,
+        SearchboxComponent
       ],
       imports: [
         RouterTestingModule,
+        FormsModule,
         MaterialModule
       ]
     }).compileComponents();

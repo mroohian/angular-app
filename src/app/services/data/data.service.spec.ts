@@ -4,7 +4,6 @@ import { HttpModule } from '@angular/http';
 
 import { DataService } from './data.service';
 
-
 describe('service: DataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({

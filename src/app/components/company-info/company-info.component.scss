@@ -1,7 +1,4 @@
-@import '~@angular/material/theming';
-@import '../../../material-theme';
-
-$accent: map-get($app-theme, accent);
+@import '../../../theme/material-theme';
 
 :host {
   display: block;
@@ -9,8 +6,8 @@ $accent: map-get($app-theme, accent);
   height: 160px; 
 
   .company-info {
-    background-color: mat-color($accent,300);
-    border: 2px solid mat-color($accent, A700);
+    background-color: mat-color($app-accent,300);
+    border: 2px solid mat-color($app-accent, A700);
 
     display: block;
     border-radius: 4px;    

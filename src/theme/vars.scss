@@ -1,0 +1,16 @@
+/* define screen sizes */
+$media-max-mobile-xs: 480px;
+
+$media-min-mobile: $media-max-mobile-xs + 1;
+$media-max-mobile: 680px;
+
+$media-min-tablet: $media-max-mobile + 1;
+$media-max-tablet: 780px;
+
+$media-min-notebook: $media-max-tablet + 1;
+$media-max-notebook: 960px;
+
+$media-min-desktop-s: $media-max-notebook + 1;
+$media-max-desktop-s: 1200px;
+
+$media-min-desktop: $media-max-desktop-s + 1;

@@ -1,0 +1,40 @@
+@import '../../../theme/material-theme';
+
+:host {
+	display: inline-block;
+	position: relative;    
+
+	md-input-container {
+		width: 100%;
+	}
+
+	.search-result {
+		@include app-popup();
+
+		width: 200px;
+		min-height: 100px;
+
+		top: 48px;
+		left: 0;
+
+		ul.search-result-list {
+			list-style: none;
+			padding: 7px 0;
+
+			li {
+				line-height: 1.6;
+				padding-left: 6px;
+				margin: 0 2px;
+
+				&:hover {	
+					background: rgba(0, 0, 0, 0.04);
+					cursor: pointer;
+				}
+
+				&:not(:last-child) {
+					border-bottom: 1px dashed gray;
+				}
+			}
+		}
+	}
+}

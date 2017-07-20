@@ -1,0 +1,10 @@
+@mixin app-popup {    
+  @include mat-elevation(10);
+
+  background-color: mat-color($app-primary, 200);    
+  border: 1px solid darkgray;
+  border-radius: 4px;
+  height: auto;
+  position: absolute;
+  z-index: 4;
+}

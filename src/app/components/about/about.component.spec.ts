@@ -10,7 +10,6 @@ describe('component: AboutComponent', () => {
   let debugElement: DebugElement;
   let el: HTMLElement;
 
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [

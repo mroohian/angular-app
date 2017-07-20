@@ -14,6 +14,7 @@ import { ContentComponent } from './components/content/content.component';
 import { AboutComponent } from './components/about/about.component';
 import { CompanyInfoComponent } from './components/company-info/company-info.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { SearchboxComponent } from './components/searchbox/searchbox.component';
 
 import { HighlightDirective } from './directives/highlight/highlight.directive';
 
@@ -26,7 +27,8 @@ import { HighlightDirective } from './directives/highlight/highlight.directive';
     AboutComponent,
     CompanyInfoComponent,
     ContactComponent,
-    HighlightDirective
+    HighlightDirective,
+    SearchboxComponent
   ],
   imports: [
     BrowserModule,

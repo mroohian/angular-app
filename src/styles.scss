@@ -1,15 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~material-design-icons/iconfont/material-icons.css";
 
-body {
+// Import google roboto font.
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+
+@import "./theme/material-theme";
+
+/* reset and background color */
+* { 
+  padding: 0;
   margin: 0;
-  
+  box-sizing: border-box;
+}
+
+html {
+  background-color: mat-color($app-accent);
+}
+
+body { 
   background-image: url(assets/img/bg.png);
 }
 
 .app-container {
-  box-sizing: border-box;
-  padding: 0 15px;
   width: 100%;
   text-align: center;
 
@@ -17,3 +29,30 @@ body {
     margin: auto;
   }
 }
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($app-theme);
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$monospace-typography: mat-typography-config(
+  $font-family: monospace,
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+@include mat-base-typography($monospace-typography);
+
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($monospace-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+/*@include angular-material-typography($monospace-typography);*/

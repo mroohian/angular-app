@@ -4,31 +4,24 @@ import { DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../../modules/material/material.module';
 
-import { HeaderComponent } from './header.component';
-import { SearchboxComponent } from '../searchbox/searchbox.component';
+import { SearchboxComponent } from './searchbox.component';
 
-describe('component: HeaderComponent', () => {
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
+describe('SearchboxComponent', () => {
+  let component: SearchboxComponent;
+  let fixture: ComponentFixture<SearchboxComponent>;
   let debugElement: DebugElement;
   let el: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        SearchboxComponent,
-        HeaderComponent
-      ],
-      imports: [
-        FormsModule,
-        MaterialModule
-      ]
+      declarations: [ SearchboxComponent ],
+      imports: [ FormsModule, MaterialModule ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderComponent);
+    fixture = TestBed.createComponent(SearchboxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
 

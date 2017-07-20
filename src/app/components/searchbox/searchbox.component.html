@@ -1,0 +1,12 @@
+<md-input-container color="accent">
+  <input mdInput type="search" placeholder="Search..."
+    (blur)="active = false" (focus)="active = true"
+    [(ngModel)]="searchTerm" (ngModelChange)="search()">    
+</md-input-container>
+
+<div *ngIf="active && results && results.length > 0" 
+  class="search-result mat-typography mat-elevation-z5">
+  <ul class="search-result-list">
+    <li *ngFor="let result of results">{{ result }}</li>
+  </ul>
+</div>

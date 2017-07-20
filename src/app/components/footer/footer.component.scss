@@ -1,3 +1,5 @@
+@import '../../../theme/material-theme';
+
 :host {
   .footer {
     margin-top: 20px;
@@ -16,7 +18,7 @@
       display: inline-block;
       white-space: nowrap;
 
-      @media (max-width: 480px) {
+      @media (max-width: $media-max-mobile-xs) {
         & {
           white-space: normal;
         }    

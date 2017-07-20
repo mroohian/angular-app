@@ -1,10 +1,16 @@
 <header>  
   <md-toolbar color="primary">
-    <h2 class="toolbar-spacer">Header</h2>
+    <div class="search-logo-bar toolbar-spacer">
+      <a class="logo">
+        <img src='/favicon.ico'>
+        <span class="title">Logo</span>
+      </a>
+      <app-searchbox></app-searchbox>
+    </div>
 
     <div class="menu">
       <label for="toggle">
-        <a md-button class="menu-button">
+        <a md-icon-button class="menu-button">
           <md-icon aria-hidden="true">menu</md-icon>
         </a>
       </label>

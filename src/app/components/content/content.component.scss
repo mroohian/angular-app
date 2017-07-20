@@ -1,26 +1,28 @@
+@import '../../../theme/material-theme';
+
 :host {
   .example-card {
     width: 200px;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: $media-max-mobile-xs) {
     .example-card {
-      width: 200px;
+      width: 250px;
     }    
   }
-  @media (min-width: 480px) and (max-width: 680px) {
+  @media (min-width: $media-min-mobile) and (max-width: $media-max-mobile) {
     .example-card {
       width: 420px;
     }    
   }
 
-  @media (min-width: 680px) and (max-width: 1200px) {
+  @media (min-width: $media-min-tablet) and (max-width: $media-max-desktop-s) {
     .example-card {
       width: 600px;
     }    
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: $media-min-desktop) {
     .example-card {
       width: 100%;
       max-width: 800px;
@@ -38,6 +40,8 @@
 
     ul {
       list-style-type: none;
+      line-height: 1.6;
+      padding: 7px 0;
 
       &:not(:last-of-type) {
         border-bottom: 1px solid darkgray;
@@ -51,7 +55,7 @@
         text-align: left;
       }
 
-      @media (max-width: 480px) {
+      @media (max-width: $media-max-mobile-xs) {
         li {
           text-align: center;
           label {
