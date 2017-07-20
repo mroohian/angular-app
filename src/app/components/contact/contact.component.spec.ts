@@ -3,6 +3,7 @@ import { DebugElement } from '@angular/core';
 
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '../../modules/material/material.module';
 
 import { DataService } from '../../services/data/data.service';
 import { DataServiceMock } from '../../services/data/data.service.mock';
@@ -21,7 +22,7 @@ describe('component: ContactComponent', () => {
       providers: [{
         provide: DataService, useValue: DataServiceMock.instance
       }],
-      imports: [ HttpModule, FormsModule ]
+      imports: [ HttpModule, FormsModule, MaterialModule ]
     })
     .compileComponents();
   }));
