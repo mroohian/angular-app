@@ -15,6 +15,9 @@ export const routes: Routes = [{
 }, {
   path: 'about',
   component: AboutComponent
+}, {
+  path: 'test',
+  loadChildren: '../lazy/lazy.module#LazyModule'
 }];
 
 @NgModule({
