@@ -1,36 +1,34 @@
 <article class="app-container">
   <h1 class="mat-h1">Contact Us</h1>
+  <pre>
+    {{ getJson(reactiveForm.value) }}
+    name: valid={{ reactiveForm.controls['name'].valid }} touched:{{ reactiveForm.controls['name'].touched }}
+    email: valid={{ reactiveForm.controls['email'].valid }} touched:{{ reactiveForm.controls['email'].touched }}
+    body: valid={{ reactiveForm.controls['body'].valid }} touched:{{ reactiveForm.controls['body'].touched }}  
+  </pre>  
 
-  <form (ngSubmit)="send()" #contactForm="ngForm">
+  <form [formGroup]="reactiveForm" (ngSubmit)="send(reactiveForm.value)">
 
     <md-input-container class="contact-field-full-width">
-      <input mdInput required
-      name="name"             
-      placeholder="Full Name"
-      [(ngModel)]="message.name">
+      <input placeholder="Full Name" mdInput formControlName="name">      
     </md-input-container>
 
     <md-input-container class="contact-field-full-width">
-      <input mdInput required email
-          type="email" 
-          name="email" 
-          placeholder="Email"
-          [(ngModel)]="message.email">
+      <input type="email" placeholder="Email" mdInput formControlName="email">
     </md-input-container>
 
     <md-input-container class="contact-field-full-width">
-      <textarea mdInput required
-        rows="10" cols="50" 
-        minlength="20" maxlength="500"
-        name="body" 
-        placeholder="Message"
-        [(ngModel)]="message.body">
+      <textarea rows="10" cols="50" 
+        placeholder="Message" 
+        mdInput formControlName="body">
       </textarea>
     </md-input-container>
 
+    <button md-raised-button (click)="changeValidators()" >Change Validators</button>
+
     <button md-raised-button type="submit"
       class="contact-send"
-      [disabled]="!contactForm.form.valid">Send Message</button>
+      [disabled]="!reactiveForm.valid">Send Message</button>
 
   </form>
 </article>

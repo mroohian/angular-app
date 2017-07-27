@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { DataService } from '../../services/data/data.service';
 import { ContactMessage } from '../../models/contactMessage.model';
 
@@ -9,28 +9,34 @@ import { ContactMessage } from '../../models/contactMessage.model';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  @ViewChild('contactForm') contactForm: NgForm;
+  reactiveForm: FormGroup;
 
-  message: ContactMessage = {
-    name: '',
-    email: '',
-    body: ''
-  };
-
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private formBuilder: FormBuilder) {
+    this.reactiveForm = formBuilder.group({
+      'name': [null, Validators.required],
+      'email': [null, Validators.compose([Validators.required, Validators.email])],
+      'body': [null, this.badWordsValidatorFn]
+    });
+  }
 
   ngOnInit() {
     this.resetMessage();
   }
 
   resetMessage() {
-    this.contactForm.resetForm();
+    this.reactiveForm.reset();
   }
 
-  send(): Promise<Boolean> {
+  send(formValue): Promise<Boolean> {
+    const message: ContactMessage = {
+      name: formValue.name,
+      email: formValue.email,
+      body: formValue.body
+    };
+
     return new Promise<any>((resolve, reject) => {
       // send the message.
-      this.dataService.sendContactMessage(this.message).subscribe((success) => {
+      this.dataService.sendContactMessage(message).subscribe((success) => {
         resolve(success);
       }, (err) => {
         reject(err);
@@ -39,5 +45,28 @@ export class ContactComponent implements OnInit {
       // clear out the message
       this.resetMessage();
     });
+  }
+
+  changeValidators() {
+    this.reactiveForm.controls['body'].setValidators(Validators.required);
+    this.reactiveForm.controls['body'].updateValueAndValidity();
+  }
+
+  getJson(obj: any): string {
+    return JSON.stringify(obj);
+  }
+
+  badWordsValidatorFn(c: AbstractControl): ValidationErrors | null {
+    const val = c.value;
+
+    if (val && (typeof val === 'string') && val.indexOf('damn') > -1) {
+      const errors: ValidationErrors = {};
+
+      errors.swearWords = 'bad words and swears are not allowed.';
+
+      return errors;
+    }
+
+    return null;
   }
 }
