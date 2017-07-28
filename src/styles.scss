@@ -1,11 +1,12 @@
+@import "./theme/material-theme";
+
 /* You can add global styles to this file, and also import other style files */
 @import "~material-design-icons/iconfont/material-icons.css";
 
 // Import google roboto font.
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
 
-@import "./theme/material-theme";
-
+/* Custom CSS */
 /* reset and background color */
 * { 
   padding: 0;
@@ -30,15 +31,15 @@ body {
   }
 }
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
+/* Material CSS */
+
+// Include the common styles for Angular Material.
 @include mat-core();
 
 // Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
 @include angular-material-theme($app-theme);
+
+/* Material Fonts */
 
 // Define a custom typography config that overrides the font-family as well as the
 // `headlines` and `body-1` levels.

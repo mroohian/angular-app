@@ -1,14 +1,14 @@
-import { MyAngular1Page } from './app.po';
+import { AppHomePage } from './app-home.po';
 
-describe('my-angular1 App', () => {
-  let page: MyAngular1Page;
+describe('angular4 App', () => {
+  let page: AppHomePage;
 
   beforeEach(() => {
-    page = new MyAngular1Page();
+    page = new AppHomePage();
   });
 
-  it('should display welcome message', () => {
+  it('should display page header message.', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to Angular4!');
+    expect(page.getPageHeaderText()).toEqual('Welcome to Angular4!');
   });
 });

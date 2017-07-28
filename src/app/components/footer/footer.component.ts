@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -10,12 +10,17 @@ export class FooterComponent implements OnInit {
   currentTime: Date;
   timeFormat: string;
 
-  constructor() {
+  constructor(zone: NgZone) {
     this.toggleFormat();
     this.currentTime = new Date(Date.now());
-    setInterval(() => {
-      this.currentTime = new Date(Date.now());
-    }, 1000);
+
+    zone.runOutsideAngular(() => {
+      setInterval(() => {
+        zone.run(() => {
+          this.currentTime = new Date(Date.now());
+        });
+      }, 1000);
+    });
   }
 
   toggleFormat() {

@@ -36,7 +36,7 @@ export class SearchboxComponent implements OnInit {
         } else {
           setTimeout(() => {
             s.next([]);
-          }, 0)
+          }, 0);
         }
 
         return s;
