@@ -7,7 +7,8 @@ import {
   MdToolbarModule,
   MdCardModule,
   MdTooltipModule,
-  MdInputModule
+  MdInputModule,
+  MdMenuModule
 } from '@angular/material';
 
 const importedModules = [
@@ -19,7 +20,8 @@ const importedModules = [
   MdToolbarModule,
   MdCardModule,
   MdTooltipModule,
-  MdInputModule
+  MdInputModule,
+  MdMenuModule
 ];
 
 @NgModule({

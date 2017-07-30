@@ -1,26 +1,46 @@
 <header>  
-  <md-toolbar color="primary">
-    <div class="search-logo-bar toolbar-spacer">
-      <a class="logo">
-        <img src='/favicon.ico'>
-        <span class="title">Logo</span>
-      </a>
+  <md-toolbar class="header-toolbar" color="primary">
+    <a class="logo">
+      <img src='/favicon.ico'>
+      <span class="title">Logo</span>
+    </a>
+
+    <div class="searchbox">
       <app-searchbox></app-searchbox>
     </div>
 
-    <div class="menu">
-      <label for="toggle">
-        <a md-icon-button class="menu-button">
-          <md-icon aria-hidden="true">menu</md-icon>
-        </a>
-      </label>
-    </div>
+    <md-menu #headerMenu="mdMenu">
+      <button md-menu-item routerLink="">
+        <md-icon aria-hidden="true">home</md-icon>
+        <span>Home</span>
+      </button>
+      <button md-menu-item routerLink="contact">
+        <md-icon aria-hidden="true">local_post_office</md-icon>
+        <span>Contact</span>
+      </button>
+      <button md-menu-item routerLink="about">
+        <md-icon aria-hidden="true">business</md-icon>
+        <span>About</span>
+      </button>
+    </md-menu>
 
-    <input id="toggle" class="menu-toggle" type="checkbox">
-    <nav>      
-      <a md-button routerLink=""><md-icon aria-hidden="true">home</md-icon> Home</a>
-      <a md-button routerLink="contact"><md-icon aria-hidden="true">local_post_office</md-icon> Contact</a>
-      <a md-button routerLink="about"><md-icon aria-hidden="true">business</md-icon> About</a>
+    <nav class="header-nav">      
+      <button md-button routerLink="">
+        <md-icon aria-hidden="true">home</md-icon>
+        <span>Home</span>
+      </button>
+      <button md-button routerLink="contact">
+        <md-icon aria-hidden="true">local_post_office</md-icon>
+        <span>Contact</span>
+      </button>
+      <button md-button routerLink="about">
+        <md-icon aria-hidden="true">business</md-icon>
+        <span>About</span>
+      </button>
     </nav>
-  </md-toolbar>  
+    
+    <a md-icon-button class="menu-button" [mdMenuTriggerFor]="headerMenu">
+      <md-icon aria-hidden="true">menu</md-icon>
+    </a>
+  </md-toolbar>
 </header>

@@ -1,19 +1,8 @@
 @import '../../../theme/material-theme';
 
 :host {
-  $header-logo-height: 60px;
-  
-  .toolbar-spacer {
-    flex: 1 1 auto;
-  }
-
-  .search-logo-bar {
-    display: flex;
-    align-items: stretch;
-    
+  .header-toolbar {
     a.logo {
-      line-height: $header-logo-height;
-
       > * {
         display: inline-block;
         vertical-align: middle;
@@ -26,52 +15,26 @@
       }
     }
 
-    app-searchbox {
+    .searchbox {    
       flex: 1 1 auto;
-      height: $header-logo-height;
-      max-width: 300px;
+      
       padding-left: 10px;
       font-size: 0.6em;
+
+      app-searchbox {
+        width: 100%;
+        max-width: 300px;
+      }
     }
-  }
 
-  .menu {
-    .menu-button {
-      display: block;
-
-      @media (min-width: $media-max-mobile-xs) {
+    .header-nav {
+      @media (max-width: $media-max-mobile) {
         display: none;
       }
     }
 
-    + nav {
-      display: none;
-
-      @media (min-width: $media-max-mobile-xs) {
-        display: flex;
-      }      
-    }
-  }
-
-  .menu-toggle {
-    display: none;
-
-    @media (max-width: 480px) {
-      + nav {
-        position: absolute;
-        width: 150px;
-        height: auto;
-        right: 10px;
-        top: 46px;
-
-        @include app-popup();
-        
-        a {
-          display: block;
-        }
-      }
-      
-      &:not(:checked) + nav {
+    .menu-button {
+      @media (min-width: $media-max-mobile) {
         display: none;
       }
     }

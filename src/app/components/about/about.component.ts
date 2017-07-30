@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit {
       address: 'Muster-Str. 10, 86861 Musterstadt',
       tel: '+49-123-13254234',
       website: 'www.muster.de'
-    }
+    };
   }
 
   ngOnInit() { }
