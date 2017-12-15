@@ -1,0 +1,14 @@
+{
+  "suites": {
+    "smoke": [
+      "./e2e/suites/smoke/**/*.feature"
+    ],
+    "regression": [
+      "./e2e/suites/regression/**/*.feature"
+    ]
+  },
+  "activeSuites": [ "smoke", "regression" ],
+  "useTags": ["@active"],
+  "generateReport": true,
+  "openReportInBrowser": true
+}

@@ -1,29 +1,26 @@
 // Protractor configuration file, see link for more information
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
-const { SpecReporter } = require('jasmine-spec-reporter');
+const htmlReporter = require('./e2e/support/html-reporter').reporter;
 
-const suites = {
-  smoke: [
-    './e2e/smoke/**/*.e2e-spec.ts'
-  ],
-  regression: [
-    './e2e/regression/**/*.e2e-spec.ts'
-  ]
-};
+const opn = require('opn');
+
+const e2eTestConfig = require('./e2e-test.conf.json');
+
+// Available test suites
+const suites = e2eTestConfig.suites;
 
 /**
- * Load desired specs from test suites command line arguments.
- * NOTE: Defaults to regression test if no --suite argument is passes in.
+ * Load desired specs from active suites
  */
 const getTestSpecs = () => {
-  const inputSuites = process.argv.filter(arg => arg.startsWith('--suite=')).map(arg => arg.substring(8));
+  const inputSuites = e2eTestConfig.activeSuites;
 
   if (inputSuites.length > 0) {
     let specs = [];
     inputSuites.forEach(s => {
       if (!suites[s]) {
-        console.warn('Warn: could not find the the suite: ' + s);
+        console.warn('Warn: could not find the suite: ' + s);
         return;
       }
 
@@ -35,27 +32,56 @@ const getTestSpecs = () => {
     }
   }
 
-  return suites.regression; /* Default suite */
+  throw new Error("The value for `activeSuites` is not defined correctly in `e2e-test.conf.json`.");
 }
 
-exports.config = {
-  allScriptsTimeout: 11000,  
+let config = {
+  allScriptsTimeout: 11000,
   specs: getTestSpecs(),
   capabilities: {
     'browserName': 'chrome'
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
-  framework: 'jasmine',
-  jasmineNodeOpts: {
-    showColors: true,
-    defaultTimeoutInterval: 30000,
-    print: function() {}
+
+  framework: 'custom',
+  frameworkPath: require.resolve('protractor-cucumber-framework'),
+
+  // cucumber command line options
+  cucumberOpts: {
+    require: ['./e2e/steps/*.ts'],
+    tags: e2eTestConfig.useTags,
+    strict: true,
+    format: [
+      'progress'
+    ],
+    'dry-run': false,
+    compiler: "ts:ts-node/register"
   },
+
   onPrepare() {
+    if (e2eTestConfig.generateReport) {
+      htmlReporter.createReportDirectory();
+    }    
+
     require('ts-node').register({
       project: 'e2e/tsconfig.e2e.json'
     });
-    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+  },
+
+  onComplete: () => {
+    if (e2eTestConfig.generateReport) {
+      htmlReporter.createHTMLReport();
+
+      if (e2eTestConfig.openReportInBrowser) {
+        opn(htmlReporter.getTargetHtmlFilename());
+      }
+    }    
   }
 };
+
+if (e2eTestConfig.generateReport) {
+  config.cucumberOpts.format.push('json:' + htmlReporter.getTargetJsonFilename())
+} 
+
+exports.config = config;
