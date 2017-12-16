@@ -14,17 +14,12 @@ describe('angular4: [App Component]', () => {
   describe('[Feature 1: Header Message]', () => {
     // Scenario 1.1:
     it('should display page header message.', () => {
-      expect(page.Header.getText()).toEqual('Welcome to Angular4!');
+      expect(page.Header.getText()).toBeTruthy();
     });
 
     // Scenario 1.2:
     it('should have Angular4 in the header message.', () => {
       expect(page.Header.getText()).toContain('Angular4!');
-    });
-
-    // Scenario 1.3: Fails on purpose
-    it('should have Fail in the header message.', () => {
-      expect(page.Header.getText()).toContain('Fail');
     });
   });
 
