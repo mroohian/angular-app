@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "debug-ng": "node --inspect --debug-brk ./node_modules/\\@angular/cli/bin/ng"
+    "debug-ng": "node --inspect-brk ./node_modules/\\@angular/cli/bin/ng"
   },
   "private": true,
   "dependencies": {
