@@ -3,32 +3,32 @@
 
   <form (ngSubmit)="send()" #contactForm="ngForm">
 
-    <md-input-container class="contact-field-full-width">
-      <input mdInput required
+    <mat-input-container class="contact-field-full-width">
+      <input matInput required
       name="name"             
       placeholder="Full Name"
       [(ngModel)]="message.name">
-    </md-input-container>
+    </mat-input-container>
 
-    <md-input-container class="contact-field-full-width">
-      <input mdInput required email
+    <mat-input-container class="contact-field-full-width">
+      <input matInput required email
           type="email" 
           name="email" 
           placeholder="Email"
           [(ngModel)]="message.email">
-    </md-input-container>
+    </mat-input-container>
 
-    <md-input-container class="contact-field-full-width">
-      <textarea mdInput required
+    <mat-input-container class="contact-field-full-width">
+      <textarea matInput required
         rows="10" cols="50" 
         minlength="20" maxlength="500"
         name="body" 
         placeholder="Message"
         [(ngModel)]="message.body">
       </textarea>
-    </md-input-container>
+    </mat-input-container>
 
-    <button md-raised-button type="submit"
+    <button mat-raised-button type="submit"
       class="contact-send"
       [disabled]="!contactForm.form.valid">Send Message</button>
 

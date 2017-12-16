@@ -1,4 +1,4 @@
-import { AppHomePage } from '../page-objects/app-home.po';
+import { AppHomePage } from '../../page-objects/app-home.po';
 
 // Component:
 describe('angular4: [App Component]', () => {
@@ -12,14 +12,19 @@ describe('angular4: [App Component]', () => {
 
   // Feature 1:
   describe('[Feature 1: Header Message]', () => {
-    // Scenario 1:
+    // Scenario 1.1:
     it('should display page header message.', () => {
       expect(page.Header.getText()).toEqual('Welcome to Angular4!');
     });
 
-    // Scenario 1:
+    // Scenario 1.2:
     it('should have Angular4 in the header message.', () => {
       expect(page.Header.getText()).toContain('Angular4!');
+    });
+
+    // Scenario 1.3: Fails on purpose
+    it('should have Fail in the header message.', () => {
+      expect(page.Header.getText()).toContain('Fail');
     });
   });
 
@@ -30,7 +35,7 @@ describe('angular4: [App Component]', () => {
       // TODO: page.Header.openHamburgerMenu();
     });
 
-    // Scenario 1:
+    // Scenario 2.1:
     it('should display the search box.', () => {
       page.navigateTo();
       expect(true).toEqual(true);

@@ -1,5 +1,5 @@
 <header>  
-  <md-toolbar class="header-toolbar" color="primary">
+  <mat-toolbar class="header-toolbar" color="primary">
     <a class="logo">
       <img src='/favicon.ico'>
       <span class="title">Logo</span>
@@ -9,38 +9,38 @@
       <app-searchbox></app-searchbox>
     </div>
 
-    <md-menu #headerMenu="mdMenu">
-      <button md-menu-item routerLink="">
-        <md-icon aria-hidden="true">home</md-icon>
+    <mat-menu #headerMenu="matMenu">
+      <button mat-menu-item routerLink="">
+        <mat-icon aria-hidden="true">home</mat-icon>
         <span>Home</span>
       </button>
-      <button md-menu-item routerLink="contact">
-        <md-icon aria-hidden="true">local_post_office</md-icon>
+      <button mat-menu-item routerLink="contact">
+        <mat-icon aria-hidden="true">local_post_office</mat-icon>
         <span>Contact</span>
       </button>
-      <button md-menu-item routerLink="about">
-        <md-icon aria-hidden="true">business</md-icon>
+      <button mat-menu-item routerLink="about">
+        <mat-icon aria-hidden="true">business</mat-icon>
         <span>About</span>
       </button>
-    </md-menu>
+    </mat-menu>
 
     <nav class="header-nav">      
-      <button md-button routerLink="">
-        <md-icon aria-hidden="true">home</md-icon>
+      <button mat-button routerLink="">
+        <mat-icon aria-hidden="true">home</mat-icon>
         <span>Home</span>
       </button>
-      <button md-button routerLink="contact">
-        <md-icon aria-hidden="true">local_post_office</md-icon>
+      <button mat-button routerLink="contact">
+        <mat-icon aria-hidden="true">local_post_office</mat-icon>
         <span>Contact</span>
       </button>
-      <button md-button routerLink="about">
-        <md-icon aria-hidden="true">business</md-icon>
+      <button mat-button routerLink="about">
+        <mat-icon aria-hidden="true">business</mat-icon>
         <span>About</span>
       </button>
     </nav>
     
-    <a md-icon-button class="menu-button" [mdMenuTriggerFor]="headerMenu">
-      <md-icon aria-hidden="true">menu</md-icon>
+    <a mat-icon-button class="menu-button" [matMenuTriggerFor]="headerMenu">
+      <mat-icon aria-hidden="true">menu</mat-icon>
     </a>
-  </md-toolbar>
+  </mat-toolbar>
 </header>

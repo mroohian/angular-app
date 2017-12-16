@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MdIconModule,
-  MdButtonModule,
-  MdCheckboxModule,
-  MdToolbarModule,
-  MdCardModule,
-  MdTooltipModule,
-  MdInputModule,
-  MdMenuModule
+  MatIconModule,
+  MatButtonModule,
+  MatCheckboxModule,
+  MatToolbarModule,
+  MatCardModule,
+  MatTooltipModule,
+  MatInputModule,
+  MatMenuModule
 } from '@angular/material';
 
 const importedModules = [
   BrowserAnimationsModule,
-  MdIconModule,
+  MatIconModule,
 
-  MdButtonModule,
-  MdCheckboxModule,
-  MdToolbarModule,
-  MdCardModule,
-  MdTooltipModule,
-  MdInputModule,
-  MdMenuModule
+  MatButtonModule,
+  MatCheckboxModule,
+  MatToolbarModule,
+  MatCardModule,
+  MatTooltipModule,
+  MatInputModule,
+  MatMenuModule
 ];
 
 @NgModule({

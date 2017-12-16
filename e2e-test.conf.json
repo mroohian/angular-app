@@ -1,0 +1,13 @@
+{
+  "suites": {
+    "smoke": [
+      "./e2e/suites/smoke/**/*.e2e-spec.ts"
+    ],
+    "regression": [
+      "./e2e/suites/regression/**/*.e2e-spec.ts"
+    ]
+  },
+  "activeSuites": [ "smoke", "regression" ],
+  "generateReport": true,
+  "openReportInBrowser": true
+}
