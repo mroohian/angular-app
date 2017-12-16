@@ -1,15 +1,13 @@
 import { browser, by, element, promise, ElementFinder } from 'protractor';
 
-export class PageHeader {
-  /*private headerElement: ElementFinder;
+export class PageHeaderWidget {
+  private headerElement: ElementFinder;
 
-  constructor(headerElement: ElementFinder) {
-    this.headerElement = headerElement;
-  }*/
-  // Effectively this is the same as above
-  constructor(private headerElement: ElementFinder) { }
+  constructor(parentElement: ElementFinder) {
+    this.headerElement = parentElement.element(by.css('article > h1'));
+  }
 
   getText(): promise.Promise<string> {
-    return this.headerElement.element(by.css('article > h1')).getText();
+    return this.headerElement.getText();
   }
 }

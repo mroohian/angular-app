@@ -1,16 +1,16 @@
 import { AppHomePage } from '../../page-objects/app-home.po';
-import { SearchBox } from '../../page-objects/widgets/searchbox.widget';
+import { SearchBoxWidget } from '../../page-objects/widgets/searchbox.widget';
 
 describe('angular4: [SearchBox Component]', () => {
   let page: AppHomePage;
-  let searchBox: SearchBox;
+  let searchBox: SearchBoxWidget;
 
   // Test Initialization:
   beforeEach(() => {
     page = new AppHomePage();
     page.navigateTo();
 
-    searchBox = new SearchBox(page.getRoot());
+    searchBox = new SearchBoxWidget(page.getRoot());
   });
 
   describe('[Feature 1: Dropdown]', () => {

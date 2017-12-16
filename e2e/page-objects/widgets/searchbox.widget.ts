@@ -1,6 +1,6 @@
 import { browser, by, element, promise, ElementFinder } from 'protractor';
 
-export class SearchBox {
+export class SearchBoxWidget {
   private searchBox: ElementFinder;
 
   constructor(parentElement: ElementFinder) {
