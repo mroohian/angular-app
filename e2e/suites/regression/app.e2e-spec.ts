@@ -1,7 +1,7 @@
 import { AppHomePage } from '../../page-objects/app-home.po';
 
 // Component:
-describe('angular4: [App Component]', () => {
+describe('angular-app: [App Component]', () => {
   let page: AppHomePage;
 
   // Test Initialization:
@@ -18,8 +18,8 @@ describe('angular4: [App Component]', () => {
     });
 
     // Scenario 1.2:
-    it('should have Angular4 in the header message.', () => {
-      expect(page.Header.getText()).toContain('Angular4!');
+    it('should have Angular-App in the header message.', () => {
+      expect(page.Header.getText()).toContain('Angular-App!');
     });
   });
 

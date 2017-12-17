@@ -1,7 +1,7 @@
 import { browser, by, element } from 'protractor';
 
 // Smoke Test
-describe('angular4: Smoke Test', () => {
+describe('angular-app: Smoke Test', () => {
   // Test Initialization:
   beforeEach(() => {
     browser.get('/');

@@ -1,7 +1,7 @@
 import { AppHomePage } from '../../page-objects/app-home.po';
 import { SearchBoxWidget } from '../../page-objects/widgets/searchbox.widget';
 
-describe('angular4: [SearchBox Component]', () => {
+describe('angular-app: [SearchBox Component]', () => {
   let page: AppHomePage;
   let searchBox: SearchBoxWidget;
 
